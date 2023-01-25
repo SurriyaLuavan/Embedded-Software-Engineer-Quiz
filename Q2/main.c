@@ -56,3 +56,19 @@ int main() {
 
     return 0;
 }
+
+// Function to insert a key-value pair into the hash table
+void insert_entry(int key, char* value) {
+    int index = key % HASH_TABLE_SIZE;
+    hash_table[index].key = key;
+    hash_table[index].value = value;
+}
+
+// Function to lookup a key in the hash table
+char* mapping_function(int key) {
+    int index = key % HASH_TABLE_SIZE;
+    if(hash_table[index].key == key)
+        return hash_table[index].value;
+    else
+        return "No match found";
+}
