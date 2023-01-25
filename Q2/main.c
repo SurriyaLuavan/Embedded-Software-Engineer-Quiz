@@ -43,15 +43,16 @@ int main() {
     }
 
     // Display the results of the mapping function
-    printf("%s\n", mapping_function(15840));
-    printf("%s\n", mapping_function(16465));
-    printf("%s\n", mapping_function(17941));
-    printf("%s\n", mapping_function(30001));
-    printf("%s\n", mapping_function(55555));
-    printf("%s\n", mapping_function(77788));
-    printf("%s\n", mapping_function(51183));
+    int userKey;
+    do {
+        printf("Enter the mapping key: (-1 to exit): ");
+        fflush(stdout);
+        scanf("%d", &userKey);
+        if (userKey == -1) {break;}
+        printf("%s\n", mapping_function(userKey));
+    } while (1);
 
-    // Freeing the allocated memeory for the table
+    // Freeing the allocated memory for the table
     free(hash_table);
 
     return 0;
